@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C06C22F1A6E987F0051EF03 /* DZRArtistCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C06C22E1A6E987F0051EF03 /* DZRArtistCollectionViewCell.m */; };
+		3EE8CCE81B19C15400F4FB02 /* DZRArtistSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCE71B19C15400F4FB02 /* DZRArtistSearchViewController.m */; };
+		3EE8CCEC1B19C18700F4FB02 /* DZRArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCEB1B19C18700F4FB02 /* DZRArtist.m */; };
+		3EE8CCF11B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCF01B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m */; };
 		5C1A7D851A6558BB00092761 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1A7D841A6558BB00092761 /* main.m */; };
 		5C1A7D881A6558BB00092761 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1A7D871A6558BB00092761 /* AppDelegate.m */; };
 		5C1A7D8E1A6558BB00092761 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C1A7D8C1A6558BB00092761 /* Main.storyboard */; };
 		5C1A7D901A6558BB00092761 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C1A7D8F1A6558BB00092761 /* Images.xcassets */; };
 		5C1A7D931A6558BB00092761 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C1A7D911A6558BB00092761 /* LaunchScreen.xib */; };
-		5C1A7DAA1A65897200092761 /* DZRArtistSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1A7DA91A65897200092761 /* DZRArtistSearchViewController.m */; };
-		5C2E661A1A67C07E00607EC5 /* DZRArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2E66191A67C07E00607EC5 /* DZRArtist.m */; };
 		5C2E661C1A67C3D500607EC5 /* DZRArtistTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2E661B1A67C3D500607EC5 /* DZRArtistTest.m */; };
 /* End PBXBuildFile section */
 
@@ -29,8 +29,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5C06C22D1A6E987F0051EF03 /* DZRArtistCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRArtistCollectionViewCell.h; sourceTree = "<group>"; };
-		5C06C22E1A6E987F0051EF03 /* DZRArtistCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRArtistCollectionViewCell.m; sourceTree = "<group>"; };
+		3EE8CCE61B19C15400F4FB02 /* DZRArtistSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRArtistSearchViewController.h; sourceTree = "<group>"; };
+		3EE8CCE71B19C15400F4FB02 /* DZRArtistSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRArtistSearchViewController.m; sourceTree = "<group>"; };
+		3EE8CCEA1B19C18700F4FB02 /* DZRArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRArtist.h; sourceTree = "<group>"; };
+		3EE8CCEB1B19C18700F4FB02 /* DZRArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRArtist.m; sourceTree = "<group>"; };
+		3EE8CCEF1B19C1D900F4FB02 /* DZRArtistCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRArtistCollectionViewCell.h; sourceTree = "<group>"; };
+		3EE8CCF01B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRArtistCollectionViewCell.m; sourceTree = "<group>"; };
 		5C1A7D7F1A6558BB00092761 /* DeezerExercice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeezerExercice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C1A7D831A6558BB00092761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C1A7D841A6558BB00092761 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,10 +45,6 @@
 		5C1A7D921A6558BB00092761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5C1A7D981A6558BC00092761 /* DeezerExerciceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeezerExerciceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C1A7D9D1A6558BC00092761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5C1A7DA81A65897200092761 /* DZRArtistSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRArtistSearchViewController.h; sourceTree = "<group>"; };
-		5C1A7DA91A65897200092761 /* DZRArtistSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRArtistSearchViewController.m; sourceTree = "<group>"; };
-		5C2E66181A67C07E00607EC5 /* DZRArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRArtist.h; sourceTree = "<group>"; };
-		5C2E66191A67C07E00607EC5 /* DZRArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRArtist.m; sourceTree = "<group>"; };
 		5C2E661B1A67C3D500607EC5 /* DZRArtistTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRArtistTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +66,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EE8CCE51B19C10B00F4FB02 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3EE8CCE61B19C15400F4FB02 /* DZRArtistSearchViewController.h */,
+				3EE8CCE71B19C15400F4FB02 /* DZRArtistSearchViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3EE8CCE91B19C15800F4FB02 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3EE8CCEA1B19C18700F4FB02 /* DZRArtist.h */,
+				3EE8CCEB1B19C18700F4FB02 /* DZRArtist.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3EE8CCED1B19C19800F4FB02 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3EE8CCEE1B19C1A900F4FB02 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3EE8CCEE1B19C1A900F4FB02 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3EE8CCEF1B19C1D900F4FB02 /* DZRArtistCollectionViewCell.h */,
+				3EE8CCF01B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3EE8CCF21B19C1E900F4FB02 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3EE8CCF41B19C22400F4FB02 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		5C1A7D761A6558BB00092761 = {
 			isa = PBXGroup;
 			children = (
@@ -87,14 +136,13 @@
 		5C1A7D811A6558BB00092761 /* DeezerExercice */ = {
 			isa = PBXGroup;
 			children = (
+				3EE8CCF41B19C22400F4FB02 /* Managers */,
+				3EE8CCF21B19C1E900F4FB02 /* Controllers */,
+				3EE8CCED1B19C19800F4FB02 /* Views */,
+				3EE8CCE91B19C15800F4FB02 /* Models */,
+				3EE8CCE51B19C10B00F4FB02 /* ViewControllers */,
 				5C1A7D861A6558BB00092761 /* AppDelegate.h */,
 				5C1A7D871A6558BB00092761 /* AppDelegate.m */,
-				5C2E66181A67C07E00607EC5 /* DZRArtist.h */,
-				5C2E66191A67C07E00607EC5 /* DZRArtist.m */,
-				5C06C22D1A6E987F0051EF03 /* DZRArtistCollectionViewCell.h */,
-				5C06C22E1A6E987F0051EF03 /* DZRArtistCollectionViewCell.m */,
-				5C1A7DA81A65897200092761 /* DZRArtistSearchViewController.h */,
-				5C1A7DA91A65897200092761 /* DZRArtistSearchViewController.m */,
 				5C1A7D8C1A6558BB00092761 /* Main.storyboard */,
 				5C1A7D8F1A6558BB00092761 /* Images.xcassets */,
 				5C1A7D911A6558BB00092761 /* LaunchScreen.xib */,
@@ -229,11 +277,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C1A7DAA1A65897200092761 /* DZRArtistSearchViewController.m in Sources */,
+				3EE8CCE81B19C15400F4FB02 /* DZRArtistSearchViewController.m in Sources */,
 				5C1A7D881A6558BB00092761 /* AppDelegate.m in Sources */,
 				5C1A7D851A6558BB00092761 /* main.m in Sources */,
-				5C06C22F1A6E987F0051EF03 /* DZRArtistCollectionViewCell.m in Sources */,
-				5C2E661A1A67C07E00607EC5 /* DZRArtist.m in Sources */,
+				3EE8CCF11B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m in Sources */,
+				3EE8CCEC1B19C18700F4FB02 /* DZRArtist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

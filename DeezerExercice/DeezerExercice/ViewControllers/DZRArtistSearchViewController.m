@@ -39,12 +39,12 @@
 }
 */
 
-#pragma - Search
+#pragma mark - Search
 
 - (void)searchArtistsWithName:(NSString *)name {
     NSString *urlRequest = [NSString stringWithFormat:@"http://api.deezer.com/search/artist?q=%@", name];
     NSURLRequest *APIRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlRequest]];
-
+    
     [NSURLConnection sendAsynchronousRequest:APIRequest
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -62,7 +62,7 @@
                            }];
 }
 
-#pragma - UISearchBarDelegate
+#pragma mark - UISearchBarDelegate
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
@@ -74,7 +74,7 @@
     [searchBar resignFirstResponder];
 }
 
-#pragma - UICollectionViewDataSource
+#pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
