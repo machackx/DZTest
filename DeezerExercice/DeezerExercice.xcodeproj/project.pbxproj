@@ -10,6 +10,8 @@
 		3EE8CCE81B19C15400F4FB02 /* DZRArtistSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCE71B19C15400F4FB02 /* DZRArtistSearchViewController.m */; };
 		3EE8CCEC1B19C18700F4FB02 /* DZRArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCEB1B19C18700F4FB02 /* DZRArtist.m */; };
 		3EE8CCF11B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCF01B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m */; };
+		3EE8CCFA1B19C33600F4FB02 /* DZRURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCF91B19C33600F4FB02 /* DZRURLSessionManager.m */; };
+		3EE8CCFD1B1A08A900F4FB02 /* DZRServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCFC1B1A08A900F4FB02 /* DZRServiceController.m */; };
 		5C1A7D851A6558BB00092761 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1A7D841A6558BB00092761 /* main.m */; };
 		5C1A7D881A6558BB00092761 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1A7D871A6558BB00092761 /* AppDelegate.m */; };
 		5C1A7D8E1A6558BB00092761 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C1A7D8C1A6558BB00092761 /* Main.storyboard */; };
@@ -35,6 +37,10 @@
 		3EE8CCEB1B19C18700F4FB02 /* DZRArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRArtist.m; sourceTree = "<group>"; };
 		3EE8CCEF1B19C1D900F4FB02 /* DZRArtistCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRArtistCollectionViewCell.h; sourceTree = "<group>"; };
 		3EE8CCF01B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRArtistCollectionViewCell.m; sourceTree = "<group>"; };
+		3EE8CCF81B19C33600F4FB02 /* DZRURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRURLSessionManager.h; sourceTree = "<group>"; };
+		3EE8CCF91B19C33600F4FB02 /* DZRURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRURLSessionManager.m; sourceTree = "<group>"; };
+		3EE8CCFB1B1A08A900F4FB02 /* DZRServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRServiceController.h; sourceTree = "<group>"; };
+		3EE8CCFC1B1A08A900F4FB02 /* DZRServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRServiceController.m; sourceTree = "<group>"; };
 		5C1A7D7F1A6558BB00092761 /* DeezerExercice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeezerExercice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C1A7D831A6558BB00092761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C1A7D841A6558BB00092761 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,6 +110,8 @@
 		3EE8CCF21B19C1E900F4FB02 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3EE8CCFB1B1A08A900F4FB02 /* DZRServiceController.h */,
+				3EE8CCFC1B1A08A900F4FB02 /* DZRServiceController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -111,6 +119,8 @@
 		3EE8CCF41B19C22400F4FB02 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				3EE8CCF81B19C33600F4FB02 /* DZRURLSessionManager.h */,
+				3EE8CCF91B19C33600F4FB02 /* DZRURLSessionManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -277,9 +287,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EE8CCFD1B1A08A900F4FB02 /* DZRServiceController.m in Sources */,
 				3EE8CCE81B19C15400F4FB02 /* DZRArtistSearchViewController.m in Sources */,
 				5C1A7D881A6558BB00092761 /* AppDelegate.m in Sources */,
 				5C1A7D851A6558BB00092761 /* main.m in Sources */,
+				3EE8CCFA1B19C33600F4FB02 /* DZRURLSessionManager.m in Sources */,
 				3EE8CCF11B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m in Sources */,
 				3EE8CCEC1B19C18700F4FB02 /* DZRArtist.m in Sources */,
 			);
@@ -405,10 +417,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DeezerExercice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DeezerExercice/Managers/DeezerExercice-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -416,10 +431,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DeezerExercice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DeezerExercice/Managers/DeezerExercice-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -10,8 +10,14 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
-    if (self) {
+    if (!self) {
+        return nil;
     }
+    
+    //unsigned identifier for artist
+    self.artistIdentifier = (NSUInteger)[[dictionary valueForKeyPath:@"id"] integerValue];
+    self.artistLink = [dictionary valueForKeyPath:@"link"];
+    
     return self;
 }
 @end

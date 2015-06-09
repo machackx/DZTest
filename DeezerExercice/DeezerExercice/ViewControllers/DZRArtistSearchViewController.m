@@ -6,6 +6,7 @@
 
 #import "DZRArtistSearchViewController.h"
 #import "DZRArtistCollectionViewCell.h"
+#import "DZRServiceController.h"
 
 @interface DZRArtistSearchViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 
@@ -66,7 +67,10 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    [self searchArtistsWithName:searchText];
+    [DZRServiceController searchArtistWithName:searchText compeletion:^(NSArray *artists, NSError *error) {
+        
+    }];
+    //[self searchArtistsWithName:searchText];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar

@@ -8,9 +8,14 @@
 
 @interface DZRArtist : NSObject
 
-@property (nonatomic, strong) NSString *artistIdentifier;
+@property (nonatomic, assign) NSUInteger artistIdentifier;
+@property (nonatomic, strong) NSString *artistLink;
 @property (nonatomic, strong) NSString *artistName;
-@property (nonatomic, strong) NSString *artistPictureUrl;
+@property (nonatomic, assign) NSInteger artistAlbumNumber;
+@property (nonatomic, assign) NSInteger artistFanNumber;
+@property (nonatomic, assign) NSInteger artistRadio;
+@property (nonatomic, strong) NSString *artistTrackList;
+@property (nonatomic, strong) NSString *artistType;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
