@@ -9,8 +9,11 @@
 #import "UIImageView+DZRImageFetcher.h"
 #import "DZRImageCache.h"
 #import "DZRURLSessionManager.h"
+#import <objc/runtime.h>
 
 @interface UIImageView (dzr_ImageFetcher)
+
+@property (nonatomic, strong, setter=dzr_setCurrentDownloadTask:) NSURLSessionDownloadTask *dzr_currentDownloadTask;
 
 @end
 
@@ -25,8 +28,6 @@
     //Add image only header for request
     [request addValue:@"image/*;q=0.8" forHTTPHeaderField:@"Accept"];
     
-    [self cancelCurrentImageOperation];
-    
     //Check if image is cached
     UIImage *cachedImage = [[DZRImageCache sharedImageCache] cacheImageForKey:[url absoluteString]];
     if (cachedImage) {
@@ -38,11 +39,13 @@
         }
         
     } else {
-        if (placeholder) {
-            self.image = placeholder;
+        self.image = nil;
+        if (self.dzr_currentDownloadTask && self.dzr_currentDownloadTask.state == NSURLSessionTaskStateRunning) {
+            [self.dzr_currentDownloadTask cancel];
+            self.dzr_currentDownloadTask = nil;
         }
         
-        [[DZRURLSessionManager sharedManager] fetchImageWithURL:url completionHandler:^(UIImage *image, NSError *error) {
+        self.dzr_currentDownloadTask = [[DZRURLSessionManager sharedManager] fetchImageWithURL:url completionHandler:^(UIImage *image, NSError *error) {
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (image) {
@@ -52,16 +55,13 @@
                         self.image = image;
                     }
                     [[DZRImageCache sharedImageCache] cacheImage:image forRequestString:request.URL.absoluteString];
-                } else if (error != nil) {
+                } else if (nil != failure && error != nil) {
+                    self.image = placeholder;
                     failure(nil, error);
                 }
             });
-            
         }];
     }
-    
-    
-    
 }
 
 #pragma mark - private methods
@@ -69,6 +69,13 @@
  *  to avoid multiple operation for a imageview, we cancel the current operation
  */
 - (void) cancelCurrentImageOperation{
-    //[[DZRURLSessionManager sharedManager]cancelRuningTask];
+}
+
+- (void) dzr_setCurrentDownloadTask: (NSURLSessionDownloadTask *)currentDownloadTask{
+    objc_setAssociatedObject(self, @selector(dzr_currentDownloadTask), currentDownloadTask, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSURLSessionDownloadTask *)dzr_currentDownloadTask{
+    return (NSURLSessionDownloadTask *)objc_getAssociatedObject(self, @selector(dzr_currentDownloadTask));
 }
 @end

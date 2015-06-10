@@ -8,4 +8,8 @@
 
 @implementation DZRArtistCollectionViewCell
 
+-(void)awakeFromNib{
+    [super awakeFromNib];
+}
+
 @end

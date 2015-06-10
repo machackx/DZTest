@@ -101,7 +101,7 @@ static dispatch_queue_t url_session_manager_creation_queue(){
     return dataTask;
 }
 
--(void)fetchImageWithURL:(NSURL *)url completionHandler:(void (^)(UIImage *, NSError *))completionHandler{
+-(NSURLSessionDownloadTask *)fetchImageWithURL:(NSURL *)url completionHandler:(void (^)(UIImage *, NSError *))completionHandler{
     NSURLSessionDownloadTask *downloadImageTask = [self.session downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         UIImage *downloadedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
         if (downloadedImage) {
@@ -111,6 +111,7 @@ static dispatch_queue_t url_session_manager_creation_queue(){
         }
     }];
     [downloadImageTask resume];
+    return downloadImageTask;
 }
 
 - (void) cancelRuningTask {

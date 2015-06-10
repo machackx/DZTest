@@ -27,8 +27,15 @@ typedef void (^DZRURLSessionTaskCompletionHandler)(NSURLResponse *response, id r
                       success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                       failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
-// Get images
-- (void)fetchImageWithURL:(NSURL *)url completionHandler:(void (^)(UIImage *image, NSError *error))completionHandler;
+/**
+ *  /
+ *
+ *  @param url               url of image
+ *  @param completionHandler return image when request is success, return NSError when error occurs
+ *
+ *  @return NSURLSessionDownloadTask, when imageview will load another image, if the old request is not finished, cancel it. So that there will not be image flush
+ */
+- (NSURLSessionDownloadTask *)fetchImageWithURL:(NSURL *)url completionHandler:(void (^)(UIImage *image, NSError *error))completionHandler;
 
 - (void)cancelRuningTask;
 

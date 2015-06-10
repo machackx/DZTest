@@ -10,6 +10,10 @@
 
 @implementation DZRURLSessionManagerTests
 
+/**
+ *  CYA: I did not do any test for async web service call, due to the requirements that no 3rd party library is allowed
+ */
+
 -(void)setUp{
     [super setUp];
     self.manager = [[DZRURLSessionManager alloc] initWithBasicConfiguration];
@@ -31,8 +35,5 @@
     XCTAssertEqual([[result objectForKey:@"data"] count], 25);
 }
 
-/**
- *  CYA: I did not do any test for async web service call, due to the requirements that no 3rd party library is allowed
- */
 
 @end

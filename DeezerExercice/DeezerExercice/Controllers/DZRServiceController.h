@@ -10,5 +10,8 @@
 
 @interface DZRServiceController : NSObject
 
-+(void)searchArtistWithName:(NSString *)artistName compeletion:(void (^)(NSArray *artists, NSError *error)) block;
++(void)searchArtistWithQuery:(NSString *)query compeletion:(void (^)(id responseObject, NSError *error)) compeletion;
++(void)searchArtistWithName:(NSString *)artistName compeletion:(void (^)(id responseObject, NSError *error)) block;
++(void)searchArtistWithName:(NSString *)artistName index:(NSUInteger)index compeletion:(void (^)(id responseObject, NSError *error)) block;
+
 @end

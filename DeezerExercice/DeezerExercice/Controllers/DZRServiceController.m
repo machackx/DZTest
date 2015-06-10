@@ -12,21 +12,23 @@
 
 @implementation DZRServiceController
 
-+(void)searchArtistWithName:(NSString *)artistName compeletion:(void (^)(NSArray *artistList, NSError *error)) compeletion{
-    NSString *requestString = [NSString stringWithFormat:@"search/artist?q=%@", artistName];
++(void)searchArtistWithName:(NSString *)artistName index:(NSUInteger)index compeletion:(void (^)(id responseObject, NSError *error)) compeletion;{
+    NSString *query = [NSString stringWithFormat:@"search/artist?q=%@&index=%li", artistName, index];
+    [self searchArtistWithQuery:query compeletion:compeletion];
+}
+
++(void)searchArtistWithName:(NSString *)artistName compeletion:(void (^)(id responseObject, NSError *error)) compeletion{
+    [self searchArtistWithQuery:[NSString stringWithFormat:@"search/artist?q=%@", artistName] compeletion:compeletion];
+}
+
++ (void)searchArtistWithQuery:(NSString *)query compeletion:(void (^)(id responseObject, NSError *error)) compeletion;
+{
     //If user type quickly, we will have a lot of queries in the queue, we need to exacuted only one query at one time
     [[DZRURLSessionManager sharedManager] cancelRuningTask];
-    [[DZRURLSessionManager sharedManager] GET:requestString parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSMutableArray *artistList = [NSMutableArray new];
-        NSArray *artistDictionary = [responseObject valueForKey:@"data"];
-        //Parse the raw JSON data
-        for (NSDictionary *artists in artistDictionary) {
-            DZRArtist *artist = [[DZRArtist alloc] initWithDictionary:artists];
-            [artistList addObject:artist];
-        }
+    [[DZRURLSessionManager sharedManager] GET:query parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
         if (nil != compeletion) {
-            compeletion([artistList copy], nil);
+            compeletion([responseObject copy], nil);
         } else {
             compeletion(nil, [NSError errorWithDomain:@"DZR Parse Error" code:10000 userInfo:nil]);
         }
