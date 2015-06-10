@@ -21,7 +21,18 @@
 }
 
 -(void)testConvertToJSONWithData{
-    NSData *jsonData = [NSData dataWithContentsOfFile:@"searchRawResult.strings"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"SearchResult" ofType:@"txt"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:filePath];
+
+    NSError *error = nil;
+    id result = [self.manager convertToJSONWithData:jsonData ifError:&error];
+    XCTAssertNotNil(result);
+    XCTAssertNotNil([result objectForKey:@"data"]);
+    XCTAssertEqual([[result objectForKey:@"data"] count], 25);
 }
+
+/**
+ *  CYA: I did not do any test for async web service call, due to the requirements that no 3rd party library is allowed
+ */
 
 @end

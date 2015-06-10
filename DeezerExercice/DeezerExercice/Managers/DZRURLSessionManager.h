@@ -31,4 +31,7 @@ typedef void (^DZRURLSessionTaskCompletionHandler)(NSURLResponse *response, id r
 - (void)fetchImageWithURL:(NSURL *)url completionHandler:(void (^)(UIImage *image, NSError *error))completionHandler;
 
 - (void)cancelRuningTask;
+
+// Just set it to public method for test purpose
+- (id) convertToJSONWithData: (NSData *) data ifError:(NSError **) error;
 @end

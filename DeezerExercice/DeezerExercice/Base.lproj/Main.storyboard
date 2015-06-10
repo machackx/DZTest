@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gp8-Eg-ZWf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gp8-Eg-ZWf">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -47,7 +47,7 @@
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v2j-7V-1uR">
-                                    <size key="itemSize" width="80" height="120"/>
+                                    <size key="itemSize" width="174" height="214"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -57,20 +57,20 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="174" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h04-Ub-2zf">
-                                                    <rect key="frame" x="0.0" y="99" width="80" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h04-Ub-2zf">
+                                                    <rect key="frame" x="0.0" y="174" width="174" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="rdP-f9-hzc"/>
+                                                        <constraint firstAttribute="height" constant="40" id="rdP-f9-hzc"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kKI-XC-AWa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="174"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -79,7 +79,7 @@
                                             <constraint firstAttribute="bottom" secondItem="h04-Ub-2zf" secondAttribute="bottom" id="4oJ-Wy-KRc"/>
                                             <constraint firstItem="kKI-XC-AWa" firstAttribute="top" secondItem="X9a-y1-Ew0" secondAttribute="top" id="Hnr-rg-4mg"/>
                                             <constraint firstAttribute="trailing" secondItem="h04-Ub-2zf" secondAttribute="trailing" id="SSp-Bb-6dC"/>
-                                            <constraint firstAttribute="bottom" secondItem="kKI-XC-AWa" secondAttribute="bottom" constant="20" id="bEW-EK-2qz"/>
+                                            <constraint firstAttribute="bottom" secondItem="kKI-XC-AWa" secondAttribute="bottom" constant="40" id="bEW-EK-2qz"/>
                                             <constraint firstItem="h04-Ub-2zf" firstAttribute="leading" secondItem="X9a-y1-Ew0" secondAttribute="leading" id="krr-QS-uXi"/>
                                             <constraint firstItem="kKI-XC-AWa" firstAttribute="leading" secondItem="X9a-y1-Ew0" secondAttribute="leading" id="muo-oH-MC9"/>
                                             <constraint firstAttribute="trailing" secondItem="kKI-XC-AWa" secondAttribute="trailing" id="odk-Ep-hdV"/>
