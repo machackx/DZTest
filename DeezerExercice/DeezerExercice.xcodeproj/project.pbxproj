@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3E27560E1B288F7700B4AFAA /* DZRLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E27560C1B288F7700B4AFAA /* DZRLoadingCell.m */; };
 		3E27560F1B288F7700B4AFAA /* DZRLoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E27560D1B288F7700B4AFAA /* DZRLoadingCell.xib */; };
+		3E2756121B28DD2000B4AFAA /* DZRArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2756111B28DD2000B4AFAA /* DZRArtistDetailViewController.m */; };
 		3EE8CCE81B19C15400F4FB02 /* DZRArtistSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCE71B19C15400F4FB02 /* DZRArtistSearchViewController.m */; };
 		3EE8CCEC1B19C18700F4FB02 /* DZRArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCEB1B19C18700F4FB02 /* DZRArtist.m */; };
 		3EE8CCF11B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCF01B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m */; };
@@ -41,6 +42,8 @@
 		3E27560B1B288F7700B4AFAA /* DZRLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRLoadingCell.h; sourceTree = "<group>"; };
 		3E27560C1B288F7700B4AFAA /* DZRLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRLoadingCell.m; sourceTree = "<group>"; };
 		3E27560D1B288F7700B4AFAA /* DZRLoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DZRLoadingCell.xib; sourceTree = "<group>"; };
+		3E2756101B28DD2000B4AFAA /* DZRArtistDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRArtistDetailViewController.h; sourceTree = "<group>"; };
+		3E2756111B28DD2000B4AFAA /* DZRArtistDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRArtistDetailViewController.m; sourceTree = "<group>"; };
 		3EE8CCE61B19C15400F4FB02 /* DZRArtistSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRArtistSearchViewController.h; sourceTree = "<group>"; };
 		3EE8CCE71B19C15400F4FB02 /* DZRArtistSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRArtistSearchViewController.m; sourceTree = "<group>"; };
 		3EE8CCEA1B19C18700F4FB02 /* DZRArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRArtist.h; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 			children = (
 				3EE8CCE61B19C15400F4FB02 /* DZRArtistSearchViewController.h */,
 				3EE8CCE71B19C15400F4FB02 /* DZRArtistSearchViewController.m */,
+				3E2756101B28DD2000B4AFAA /* DZRArtistDetailViewController.h */,
+				3E2756111B28DD2000B4AFAA /* DZRArtistDetailViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 				3EEBE1EC1B2758FD0086C093 /* UIImageView+DZRImageFetcher.m in Sources */,
 				5C1A7D851A6558BB00092761 /* main.m in Sources */,
 				3E27560E1B288F7700B4AFAA /* DZRLoadingCell.m in Sources */,
+				3E2756121B28DD2000B4AFAA /* DZRArtistDetailViewController.m in Sources */,
 				3EE8CCFA1B19C33600F4FB02 /* DZRURLSessionManager.m in Sources */,
 				3EE8CCF11B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m in Sources */,
 				3EE8CCEC1B19C18700F4FB02 /* DZRArtist.m in Sources */,
@@ -467,6 +473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DeezerExercice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -481,6 +488,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DeezerExercice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

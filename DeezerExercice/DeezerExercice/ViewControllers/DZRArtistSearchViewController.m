@@ -5,6 +5,7 @@
 //
 
 #import "DZRArtistSearchViewController.h"
+#import "DZRArtistDetailViewController.h"
 #import "DZRArtistCollectionViewCell.h"
 #import "DZRServiceController.h"
 #import "DZRArtist.h"
@@ -26,6 +27,7 @@ static const CGFloat DZRPaginatedLoadScrollViewThreshold = 40.f;
 @property (nonatomic, assign) NSUInteger lastLoadedPageIndex;
 @property (nonatomic, assign) NSUInteger totalNumber;
 @property (nonatomic, assign) BOOL isLoading;
+@property (nonatomic, strong) DZRArtist *selectedArtist;
 
 @end
 
@@ -56,18 +58,18 @@ static const CGFloat DZRPaginatedLoadScrollViewThreshold = 40.f;
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.destinationViewController isKindOfClass:[DZRArtistDetailViewController class]]) {
+        DZRArtistDetailViewController *destinationController = (DZRArtistDetailViewController *)segue.destinationViewController;
+        destinationController.artist = self.selectedArtist;
+    }
 }
-*/
+
 
 #pragma mark - Search
-
 - (void)searchArtistsWithName:(NSString *)name {
     
     [DZRServiceController searchArtistWithName:name compeletion:^(id responseObject, NSError *error) {
@@ -130,7 +132,8 @@ static const CGFloat DZRPaginatedLoadScrollViewThreshold = 40.f;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    self.selectedArtist = [self.artists objectAtIndex:indexPath.item];
+    [self performSegueWithIdentifier:@"showArtistDetail" sender:self];
 }
 
 //Pagination

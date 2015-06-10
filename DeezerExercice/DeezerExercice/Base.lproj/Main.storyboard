@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -21,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="21" y="164"/>
         </scene>
-        <!--Artist Search-->
+        <!--Search-->
         <scene sceneID="R5b-kH-5H2">
             <objects>
                 <viewController id="t1i-yi-ig2" customClass="DZRArtistSearchViewController" sceneMemberID="viewController">
@@ -68,7 +69,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="rdP-f9-hzc"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -108,15 +109,76 @@
                             <constraint firstItem="G2z-Iq-UIH" firstAttribute="top" secondItem="pap-sx-raJ" secondAttribute="bottom" id="yCk-BW-yNx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Artist Search" id="rtH-4h-Mgp"/>
+                    <navigationItem key="navigationItem" title="Search" id="rtH-4h-Mgp"/>
                     <connections>
                         <outlet property="collectionView" destination="G2z-Iq-UIH" id="IIW-82-eMc"/>
                         <outlet property="searchBar" destination="pap-sx-raJ" id="Owf-DU-yQc"/>
+                        <segue destination="mrX-jl-SzP" kind="show" identifier="showArtistDetail" id="G40-m5-Q6t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVv-6f-8ZR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="745" y="164"/>
+        </scene>
+        <!--Artist Detail View Controller-->
+        <scene sceneID="fmr-RY-lgl">
+            <objects>
+                <viewController id="mrX-jl-SzP" customClass="DZRArtistDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i0c-SS-a0p"/>
+                        <viewControllerLayoutGuide type="bottom" id="6wd-Oi-RxB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wUX-XF-aPF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G1z-7n-3dY">
+                                <rect key="frame" x="26" y="84" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="0pm-fa-RyC"/>
+                                    <constraint firstAttribute="height" constant="120" id="c30-dE-HzK"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fans number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqP-Ia-hMX">
+                                <rect key="frame" x="162" y="100" width="412" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TGc-A9-sNS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmu-kI-L44">
+                                <rect key="frame" x="162" y="147" width="412" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NDT-KF-EcA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xqP-Ia-hMX" firstAttribute="top" secondItem="i0c-SS-a0p" secondAttribute="bottom" constant="36" id="9dX-ll-8dl"/>
+                            <constraint firstItem="G1z-7n-3dY" firstAttribute="leading" secondItem="wUX-XF-aPF" secondAttribute="leadingMargin" constant="10" id="Ajo-Pz-0YB"/>
+                            <constraint firstItem="G1z-7n-3dY" firstAttribute="top" secondItem="i0c-SS-a0p" secondAttribute="bottom" constant="20" id="JCB-Kh-XFa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xqP-Ia-hMX" secondAttribute="trailing" constant="10" id="KKu-RW-2QB"/>
+                            <constraint firstItem="xqP-Ia-hMX" firstAttribute="leading" secondItem="G1z-7n-3dY" secondAttribute="trailing" constant="16" id="OSb-Hr-qH1"/>
+                            <constraint firstItem="lmu-kI-L44" firstAttribute="top" secondItem="xqP-Ia-hMX" secondAttribute="bottom" constant="17" id="Okg-bW-I0Q"/>
+                            <constraint firstItem="lmu-kI-L44" firstAttribute="leading" secondItem="G1z-7n-3dY" secondAttribute="trailing" constant="16" id="WHc-RZ-Mft"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lmu-kI-L44" secondAttribute="trailing" constant="10" id="XgQ-yM-Fnq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="albumsNumberLabel" destination="lmu-kI-L44" id="l0a-bN-3zX"/>
+                        <outlet property="fansNumberLabel" destination="xqP-Ia-hMX" id="A2T-gG-Ctm"/>
+                        <outlet property="thumbnail" destination="G1z-7n-3dY" id="OR7-c7-muh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQ5-h4-QOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1499" y="164"/>
         </scene>
     </scenes>
 </document>
