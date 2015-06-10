@@ -8,6 +8,7 @@
 #import "DZRArtistCollectionViewCell.h"
 #import "DZRServiceController.h"
 #import "DZRArtist.h"
+#import "UIImageView+DZRImageFetcher.h"
 
 @interface DZRArtistSearchViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 
@@ -76,8 +77,7 @@
 
     DZRArtistCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     DZRArtist *artist = [self.artists objectAtIndex:indexPath.row];
-    //NSData *imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:artist.artistPictureUrl]];
-    //cell.artistImage.image = [UIImage imageWithData:imageData];
+    [cell.artistImage setImageWithURL:[NSURL URLWithString:artist.artistPictureUrl] placeholder:[UIImage imageNamed:@""] success:nil failure:nil];
     cell.artistName.text = artist.artistName;
     return cell;
 }

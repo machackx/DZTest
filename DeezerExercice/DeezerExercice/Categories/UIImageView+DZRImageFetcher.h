@@ -12,7 +12,7 @@
 
 - (void)setImageWithURL: (NSURL *)url
             placeholder:(UIImage *)placeholder
-                success:(void(^)(NSHTTPURLResponse *response))success
-                failure:(void(^)(NSHTTPURLResponse *response))failure;
+                success:(void(^)(NSHTTPURLResponse *response, UIImage *image))success
+                failure:(void(^)(NSHTTPURLResponse *response, NSError *error))failure;
 
 @end

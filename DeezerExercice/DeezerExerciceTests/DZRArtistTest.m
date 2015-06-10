@@ -52,7 +52,7 @@
     
     XCTAssertEqualObjects(artist.artistIdentifier, @"1033");
     XCTAssertEqualObjects(artist.artistName, @"Alain Souchon");
-    XCTAssertEqualObjects(artist.artistPictureUrl, @"http://www.deezer.com/artist/1033");
+    XCTAssertEqualObjects(artist.artistPictureUrl, @"http://api.deezer.com/artist/1033/image");
 }
 
 

@@ -13,6 +13,8 @@
 		3EE8CCFA1B19C33600F4FB02 /* DZRURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCF91B19C33600F4FB02 /* DZRURLSessionManager.m */; };
 		3EE8CCFD1B1A08A900F4FB02 /* DZRServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCFC1B1A08A900F4FB02 /* DZRServiceController.m */; };
 		3EEBE1EC1B2758FD0086C093 /* UIImageView+DZRImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEBE1EB1B2758FD0086C093 /* UIImageView+DZRImageFetcher.m */; };
+		3EEBE1F71B2839DB0086C093 /* DZRImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEBE1F61B2839DB0086C093 /* DZRImageCache.m */; };
+		3EEBE1FA1B285EB20086C093 /* DZRURLSessionManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEBE1F91B285EB20086C093 /* DZRURLSessionManagerTests.m */; };
 		5C1A7D851A6558BB00092761 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1A7D841A6558BB00092761 /* main.m */; };
 		5C1A7D881A6558BB00092761 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1A7D871A6558BB00092761 /* AppDelegate.m */; };
 		5C1A7D8E1A6558BB00092761 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C1A7D8C1A6558BB00092761 /* Main.storyboard */; };
@@ -44,6 +46,10 @@
 		3EE8CCFC1B1A08A900F4FB02 /* DZRServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRServiceController.m; sourceTree = "<group>"; };
 		3EEBE1EA1B2758FD0086C093 /* UIImageView+DZRImageFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+DZRImageFetcher.h"; sourceTree = "<group>"; };
 		3EEBE1EB1B2758FD0086C093 /* UIImageView+DZRImageFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+DZRImageFetcher.m"; sourceTree = "<group>"; };
+		3EEBE1F51B2839DB0086C093 /* DZRImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRImageCache.h; sourceTree = "<group>"; };
+		3EEBE1F61B2839DB0086C093 /* DZRImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRImageCache.m; sourceTree = "<group>"; };
+		3EEBE1F81B285EB20086C093 /* DZRURLSessionManagerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRURLSessionManagerTests.h; sourceTree = "<group>"; };
+		3EEBE1F91B285EB20086C093 /* DZRURLSessionManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRURLSessionManagerTests.m; sourceTree = "<group>"; };
 		5C1A7D7F1A6558BB00092761 /* DeezerExercice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeezerExercice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C1A7D831A6558BB00092761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C1A7D841A6558BB00092761 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,6 +143,15 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		3EEBE1EE1B28317D0086C093 /* ImageFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				3EEBE1F51B2839DB0086C093 /* DZRImageCache.h */,
+				3EEBE1F61B2839DB0086C093 /* DZRImageCache.m */,
+			);
+			path = ImageFetcher;
+			sourceTree = "<group>";
+		};
 		5C1A7D761A6558BB00092761 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +173,7 @@
 		5C1A7D811A6558BB00092761 /* DeezerExercice */ = {
 			isa = PBXGroup;
 			children = (
+				3EEBE1EE1B28317D0086C093 /* ImageFetcher */,
 				3EEBE1E91B2758BB0086C093 /* Categories */,
 				3EE8CCF41B19C22400F4FB02 /* Managers */,
 				3EE8CCF21B19C1E900F4FB02 /* Controllers */,
@@ -187,6 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				5C2E661B1A67C3D500607EC5 /* DZRArtistTest.m */,
+				3EEBE1F81B285EB20086C093 /* DZRURLSessionManagerTests.h */,
+				3EEBE1F91B285EB20086C093 /* DZRURLSessionManagerTests.m */,
 				5C1A7D9C1A6558BC00092761 /* Supporting Files */,
 			);
 			path = DeezerExerciceTests;
@@ -308,6 +326,7 @@
 				3EE8CCFA1B19C33600F4FB02 /* DZRURLSessionManager.m in Sources */,
 				3EE8CCF11B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m in Sources */,
 				3EE8CCEC1B19C18700F4FB02 /* DZRArtist.m in Sources */,
+				3EEBE1F71B2839DB0086C093 /* DZRImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C2E661C1A67C3D500607EC5 /* DZRArtistTest.m in Sources */,
+				3EEBE1FA1B285EB20086C093 /* DZRURLSessionManagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

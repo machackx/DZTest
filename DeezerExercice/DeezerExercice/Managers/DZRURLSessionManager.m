@@ -96,10 +96,21 @@ static dispatch_queue_t url_session_manager_creation_queue(){
         }];
     });
     
-    dataTask.taskDescription = [NSString stringWithFormat:@"%p", self];
     [dataTask resume];
     
     return dataTask;
+}
+
+-(void)fetchImageWithURL:(NSURL *)url completionHandler:(void (^)(UIImage *, NSError *))completionHandler{
+    NSURLSessionDownloadTask *downloadImageTask = [self.session downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        UIImage *downloadedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
+        if (downloadedImage) {
+            completionHandler(downloadedImage, nil);
+        } else{
+            completionHandler(nil, [NSError errorWithDomain:NSURLErrorDomain code:10002 userInfo:nil]);
+        }
+    }];
+    [downloadImageTask resume];
 }
 
 - (void) cancelRuningTask {
