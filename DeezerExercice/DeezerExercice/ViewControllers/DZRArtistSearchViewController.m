@@ -1,12 +1,13 @@
 //
 //  DZRArtistSearchViewController.m
-//  DeezerExercice
+//  ;
 //  Copyright (c) 2015 Deezer. All rights reserved.
 //
 
 #import "DZRArtistSearchViewController.h"
 #import "DZRArtistCollectionViewCell.h"
 #import "DZRServiceController.h"
+#import "DZRArtist.h"
 
 @interface DZRArtistSearchViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 
@@ -43,34 +44,18 @@
 #pragma mark - Search
 
 - (void)searchArtistsWithName:(NSString *)name {
-    NSString *urlRequest = [NSString stringWithFormat:@"http://api.deezer.com/search/artist?q=%@", name];
-    NSURLRequest *APIRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlRequest]];
     
-    [NSURLConnection sendAsynchronousRequest:APIRequest
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                               if (connectionError) {
-                                   // TODO
-                               }
-                               else {
-                                   NSDictionary *retData = [NSJSONSerialization JSONObjectWithData:data
-                                                                                           options:kNilOptions
-                                                                                             error:&connectionError];
-                                   NSLog(@"%@", [retData objectForKey:@"data"]);
-                                   self.artists = [retData objectForKey:@"data"];
-                                   [self.collectionView reloadData];
-                               }
-                           }];
+    [DZRServiceController searchArtistWithName:name compeletion:^(NSArray *artists, NSError *error) {
+        self.artists = artists;
+        [self.collectionView reloadData];
+    }];
 }
 
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    [DZRServiceController searchArtistWithName:searchText compeletion:^(NSArray *artists, NSError *error) {
-        
-    }];
-    //[self searchArtistsWithName:searchText];
+    [self searchArtistsWithName:searchText];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -90,10 +75,10 @@
     static NSString *CellIdentifier = @"ArtistCollectionViewCellIdentifier";
 
     DZRArtistCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-    NSDictionary *artistDictionary = [self.artists objectAtIndex:indexPath.row];
-    NSData *imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:[artistDictionary objectForKey:@"picture"]]];
-    cell.artistImage.image = [UIImage imageWithData:imageData];
-    cell.artistName.text = [artistDictionary objectForKey:@"name"];
+    DZRArtist *artist = [self.artists objectAtIndex:indexPath.row];
+    //NSData *imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:artist.artistPictureUrl]];
+    //cell.artistImage.image = [UIImage imageWithData:imageData];
+    cell.artistName.text = artist.artistName;
     return cell;
 }
 

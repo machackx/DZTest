@@ -15,8 +15,15 @@
     }
     
     //unsigned identifier for artist
-    self.artistIdentifier = (NSUInteger)[[dictionary valueForKeyPath:@"id"] integerValue];
+    self.artistIdentifier = [dictionary valueForKeyPath:@"id"];
     self.artistLink = [dictionary valueForKeyPath:@"link"];
+    self.artistName = [dictionary valueForKeyPath:@"name"];
+    self.artistAlbumNumber = (NSUInteger)[[dictionary valueForKeyPath:@"nb_album"] integerValue];
+    self.artistFanNumber =(NSUInteger)[[dictionary valueForKeyPath:@"nb_fan"] integerValue];
+    self.artistPictureUrl = [dictionary valueForKeyPath:@"picture"];
+    self.artistRadio = [[dictionary valueForKeyPath:@"radio"] integerValue];
+    self.artistTrackList = [dictionary valueForKeyPath:@"tracklist"];
+    self.artistType = [dictionary valueForKeyPath:@"type"];
     
     return self;
 }

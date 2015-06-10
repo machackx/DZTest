@@ -25,4 +25,6 @@ typedef void (^DZRURLSessionTaskCompletionHandler)(NSURLResponse *response, id r
                    parameters:(id)parameters
                       success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                       failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+
+- (void)cancelRuningTask;
 @end

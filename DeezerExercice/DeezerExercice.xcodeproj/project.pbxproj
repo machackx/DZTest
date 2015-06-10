@@ -12,6 +12,7 @@
 		3EE8CCF11B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCF01B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m */; };
 		3EE8CCFA1B19C33600F4FB02 /* DZRURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCF91B19C33600F4FB02 /* DZRURLSessionManager.m */; };
 		3EE8CCFD1B1A08A900F4FB02 /* DZRServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8CCFC1B1A08A900F4FB02 /* DZRServiceController.m */; };
+		3EEBE1EC1B2758FD0086C093 /* UIImageView+DZRImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEBE1EB1B2758FD0086C093 /* UIImageView+DZRImageFetcher.m */; };
 		5C1A7D851A6558BB00092761 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1A7D841A6558BB00092761 /* main.m */; };
 		5C1A7D881A6558BB00092761 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1A7D871A6558BB00092761 /* AppDelegate.m */; };
 		5C1A7D8E1A6558BB00092761 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C1A7D8C1A6558BB00092761 /* Main.storyboard */; };
@@ -41,6 +42,8 @@
 		3EE8CCF91B19C33600F4FB02 /* DZRURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRURLSessionManager.m; sourceTree = "<group>"; };
 		3EE8CCFB1B1A08A900F4FB02 /* DZRServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRServiceController.h; sourceTree = "<group>"; };
 		3EE8CCFC1B1A08A900F4FB02 /* DZRServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZRServiceController.m; sourceTree = "<group>"; };
+		3EEBE1EA1B2758FD0086C093 /* UIImageView+DZRImageFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+DZRImageFetcher.h"; sourceTree = "<group>"; };
+		3EEBE1EB1B2758FD0086C093 /* UIImageView+DZRImageFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+DZRImageFetcher.m"; sourceTree = "<group>"; };
 		5C1A7D7F1A6558BB00092761 /* DeezerExercice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeezerExercice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C1A7D831A6558BB00092761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C1A7D841A6558BB00092761 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -125,6 +128,15 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		3EEBE1E91B2758BB0086C093 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3EEBE1EA1B2758FD0086C093 /* UIImageView+DZRImageFetcher.h */,
+				3EEBE1EB1B2758FD0086C093 /* UIImageView+DZRImageFetcher.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		5C1A7D761A6558BB00092761 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +158,7 @@
 		5C1A7D811A6558BB00092761 /* DeezerExercice */ = {
 			isa = PBXGroup;
 			children = (
+				3EEBE1E91B2758BB0086C093 /* Categories */,
 				3EE8CCF41B19C22400F4FB02 /* Managers */,
 				3EE8CCF21B19C1E900F4FB02 /* Controllers */,
 				3EE8CCED1B19C19800F4FB02 /* Views */,
@@ -290,6 +303,7 @@
 				3EE8CCFD1B1A08A900F4FB02 /* DZRServiceController.m in Sources */,
 				3EE8CCE81B19C15400F4FB02 /* DZRArtistSearchViewController.m in Sources */,
 				5C1A7D881A6558BB00092761 /* AppDelegate.m in Sources */,
+				3EEBE1EC1B2758FD0086C093 /* UIImageView+DZRImageFetcher.m in Sources */,
 				5C1A7D851A6558BB00092761 /* main.m in Sources */,
 				3EE8CCFA1B19C33600F4FB02 /* DZRURLSessionManager.m in Sources */,
 				3EE8CCF11B19C1D900F4FB02 /* DZRArtistCollectionViewCell.m in Sources */,

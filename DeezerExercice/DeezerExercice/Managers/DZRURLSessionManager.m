@@ -77,13 +77,19 @@ static dispatch_queue_t url_session_manager_creation_queue(){
                     NSError *serializeError = nil;
                     id responseObject = [self convertToJSONWithData:data ifError:&serializeError];
                     if (responseObject && nil == serializeError) {
-                        success(dataTask, responseObject);
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            success(dataTask, responseObject);
+                        });
                     } else {
-                        failure(nil, serializeError);
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            failure(nil, serializeError);
+                        });
                     }
                 } else {
                     if (failure) {
-                        failure(nil, error);
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            failure(nil, error);
+                        });
                     }
                 }
             }
@@ -94,6 +100,18 @@ static dispatch_queue_t url_session_manager_creation_queue(){
     [dataTask resume];
     
     return dataTask;
+}
+
+- (void) cancelRuningTask {
+    [self.session getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
+        //Cancel all runing task
+        for (NSURLSessionDataTask *task in dataTasks) {
+            if (task.state == NSURLSessionTaskStateRunning) {
+                [task cancel];
+            }
+        }
+    }];
+
 }
 
 #pragma mark - private methods
