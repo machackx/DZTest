@@ -13,7 +13,6 @@
     if (!self) {
         return nil;
     }
-    
     //unsigned identifier for artist
     self.artistIdentifier = [dictionary valueForKeyPath:@"id"];
     self.artistLink = [dictionary valueForKeyPath:@"link"];

@@ -72,7 +72,7 @@ static const CGFloat DZRPaginatedLoadScrollViewThreshold = 40.f;
 #pragma mark - Search
 - (void)searchArtistsWithName:(NSString *)name {
     
-    [DZRServiceController searchArtistWithName:name compeletion:^(id responseObject, NSError *error) {
+    [DZRServiceController searchArtistWithName:name completion:^(id responseObject, NSError *error) {
         NSMutableArray *artistList = [NSMutableArray new];
         NSArray *artistDictionary = [responseObject valueForKey:@"data"];
         //Parse the raw JSON data
@@ -165,7 +165,7 @@ static const CGFloat DZRPaginatedLoadScrollViewThreshold = 40.f;
     if (self.lastLoadedPageIndex == [self.artists count]) {
         if (!self.isLoading) {
             self.isLoading = YES;
-            [DZRServiceController searchArtistWithName:self.searchBar.text index:self.lastLoadedPageIndex compeletion:^(id responseObject, NSError *error) {
+            [DZRServiceController searchArtistWithName:self.searchBar.text index:self.lastLoadedPageIndex completion:^(id responseObject, NSError *error) {
                 NSMutableArray *artistList = [NSMutableArray arrayWithArray:self.artists];
                 NSArray *artistDictionaryList = [responseObject valueForKey:@"data"];
                 self.lastLoadedPageIndex += [artistDictionaryList count];

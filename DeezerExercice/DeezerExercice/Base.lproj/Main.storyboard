@@ -157,9 +157,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2Sv-26-KHq">
+                                <rect key="frame" x="1" y="212" width="598" height="380"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mrX-jl-SzP" id="L3H-fM-GMl"/>
+                                    <outlet property="delegate" destination="mrX-jl-SzP" id="pGL-dR-Wu4"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2Sv-26-KHq" firstAttribute="rightMargin" secondItem="wUX-XF-aPF" secondAttribute="rightMargin" id="7zb-JS-f8V"/>
                             <constraint firstItem="xqP-Ia-hMX" firstAttribute="top" secondItem="i0c-SS-a0p" secondAttribute="bottom" constant="36" id="9dX-ll-8dl"/>
                             <constraint firstItem="G1z-7n-3dY" firstAttribute="leading" secondItem="wUX-XF-aPF" secondAttribute="leadingMargin" constant="10" id="Ajo-Pz-0YB"/>
                             <constraint firstItem="G1z-7n-3dY" firstAttribute="top" secondItem="i0c-SS-a0p" secondAttribute="bottom" constant="20" id="JCB-Kh-XFa"/>
@@ -168,12 +177,16 @@
                             <constraint firstItem="lmu-kI-L44" firstAttribute="top" secondItem="xqP-Ia-hMX" secondAttribute="bottom" constant="17" id="Okg-bW-I0Q"/>
                             <constraint firstItem="lmu-kI-L44" firstAttribute="leading" secondItem="G1z-7n-3dY" secondAttribute="trailing" constant="16" id="WHc-RZ-Mft"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lmu-kI-L44" secondAttribute="trailing" constant="10" id="XgQ-yM-Fnq"/>
+                            <constraint firstItem="6wd-Oi-RxB" firstAttribute="top" secondItem="2Sv-26-KHq" secondAttribute="bottom" constant="8" id="jMh-MC-kVZ"/>
+                            <constraint firstItem="2Sv-26-KHq" firstAttribute="top" secondItem="G1z-7n-3dY" secondAttribute="bottom" constant="8" id="kRJ-RT-sP1"/>
+                            <constraint firstItem="2Sv-26-KHq" firstAttribute="leadingMargin" secondItem="wUX-XF-aPF" secondAttribute="leadingMargin" id="okg-A9-WQX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="albumsNumberLabel" destination="lmu-kI-L44" id="l0a-bN-3zX"/>
                         <outlet property="fansNumberLabel" destination="xqP-Ia-hMX" id="A2T-gG-Ctm"/>
                         <outlet property="thumbnail" destination="G1z-7n-3dY" id="OR7-c7-muh"/>
+                        <outlet property="topAlbumTableView" destination="2Sv-26-KHq" id="eXN-oy-YEt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQ5-h4-QOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
